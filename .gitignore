@@ -1,0 +1,16 @@
+*.pyc
+*.png
+*.pkl
+*.p
+*.jpg
+*.zip
+*.gif
+*.env
+*.txt
+media/
+runs/
+common/
+__pycache/__
+env/color_threshold.py
+env/cube_detection_test.py
+env/human_test.py

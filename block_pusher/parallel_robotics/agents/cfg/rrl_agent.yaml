@@ -1,0 +1,54 @@
+# learning rate
+lr: 0.0003
+# minibatch size
+batch_size: 100
+# model updates per sim step
+updates_per_step: 10
+# initial number of random actions
+start_steps: 100
+# don't use human transitions for safety critic or policy
+mask_human: False
+# if True, use recovery policy; otherwise run vanilla SAC
+use_recovery: False
+# DDPG recovery policy
+ddpg_recovery: False
+# Q-sampling recovery policy
+Q_sampling_recovery: False
+# only train safety critic on offline data
+disable_online_updates: False
+# safety critic gradient steps
+critic_safe_pretraining_steps: 10000
+# safety critic gradient steps for pretraining with task data
+critic_pretraining_steps: 3000
+# Policy type - Gaussian or Deterministic
+policy: Deterministic
+# value target updates per policy and critic update
+target_update_interval: 1
+# reward discount factor
+gamma: 0.99
+# safety critic discount factor
+gamma_safe: 0.5
+# target smoothing coefficient
+tau: 0.005
+# target smoothing coefficient for risk critic
+tau_safe: 0.0002
+# SAC temperature parameter for relative importance of entropy term against reward term
+alpha: 0.2
+# automatically adjust SAC alpha
+automatic_entropy_tuning: False
+# NN hidden layer size
+hidden_size: 256
+# replay buffer size
+replay_size: 1000000
+# if >=0, the fraction of positive examples in [0,1] to sample for critic training
+pos_fraction: -1
+# epsilon value in RRL that determines what threshold of Qrisk to trigger recovery policy
+eps_safe: 0.1
+# pretrain safety critic on offline data
+pretrain_qrisk: True
+# pretrain policy on offline demos
+task_demos: True
+# max number of offline constraint violation transitions
+num_unsafe_transitions: 10000
+# max number of offline demo transitions
+num_task_transitions: 10000

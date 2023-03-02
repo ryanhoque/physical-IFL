@@ -1,0 +1,2 @@
+# whether or not to prefetch all expert actions with one NN forward pass
+prefetch: True
